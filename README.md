@@ -4,7 +4,7 @@
 
 ## Project Overview:
 
-The AI-Enabled Assessment System is designed to facilitate the assessment process by integrating AI algorithms for analyzing video and audio content. The system provides various data points derived from the input media and allows for analytical calculations to be performed on the results. It supports Multiple Choice Questions (MCQs) and Multiple Answer Questions (MAQs), enhancing the assessment process with advanced technological capabilities.
+The AI-Enabled Assessment System is designed to facilitate the assessment process by integrating AI algorithms. The system provides various data points derived from the input media and allows for analytical calculations to be performed on the results. It supports Multiple Choice Questions (MCQs) and Multiple Answer Questions (MAQs), enhancing the assessment process with advanced technological capabilities.
 
 ---
 
