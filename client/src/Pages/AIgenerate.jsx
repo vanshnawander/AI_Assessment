@@ -11,7 +11,7 @@ export default function AIGenerator() {
     const [assessments, setAssessments] = useState([]);
     const [assessmentid, setAssessmentid] = useState(null);
     async function getAssessments() {
-      const url = "http://localhost:4000/getassessmentsdata";
+      const url = "getassessmentsdata";
       const { data } = await axios.post(url, { assessmentStatus: "draft" },{});
       //console.log(data);
       setAssessments(data);
@@ -68,7 +68,7 @@ export default function AIGenerator() {
           alert("Please select an assessment to add questions");
           return;
         }
-        const url = "http://localhost:4000/addquestiontoassessment";
+        const url = "addquestiontoassessment";
          const { data } = await axios.post(url, {
            questionid:selectedQuestions,assessmentid:assessmentid});
           //   console.log(data);
@@ -89,7 +89,7 @@ export default function AIGenerator() {
         const text = e.target[0].value;
         const numques = e.target[1].value;
         console.log(text);
-        const url = "http://localhost:4000/AIgenerate";
+        const url = "AIgenerate";
         const { data } = await axios.post(url,{text,numques});
         console.log(data);
         if(data.error){

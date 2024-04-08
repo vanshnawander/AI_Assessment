@@ -11,7 +11,7 @@ export default function AssessmentCreationForm() {
         const assessmentDescription = e.target[1].value;
         const assessmentDuration = e.target[2].value;
         const assessmentType = e.target[3].value;
-        const url = 'http://localhost:4000/createassessment';
+        const url = '""createassessment';
         const {data} = await axios.post(url,{assessmentName,assessmentDescription,assessmentDuration,assessmentType},{withCredentials:true});
         //console.log(data)
         navigate('/draftassessments');

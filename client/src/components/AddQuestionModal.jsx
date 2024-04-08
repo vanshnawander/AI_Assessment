@@ -56,7 +56,7 @@ export default function Modal(id) {
   }
 
   async function GetData() {
-    const { data } = await axios.get("http://localhost:4000/questions");
+    const { data } = await axios.get("questions");
     setQuestions(data);
   }
   useEffect(() => {
@@ -69,7 +69,7 @@ export default function Modal(id) {
   async function AddquestionToAssessment() {
    // console.log(selectedQuestions);
     setModalOpen(false)
-   const url = "http://localhost:4000/addquestiontoassessment";
+   const url = "addquestiontoassessment";
     const { data } = await axios.post(url, {
       questionid:selectedQuestions,assessmentid:id.id});
      //   console.log(data);

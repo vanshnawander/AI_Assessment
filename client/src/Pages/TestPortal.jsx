@@ -36,7 +36,7 @@ export default function TestPortal() {
   };
 
   const submitTest = async () => {
-    const url = "http://localhost:4000/submitTest";
+    const url = "submitTest";
     //console.log(candidate, email, selectedOptions);
     const { data } = await axios.post(url, {
       assessmentId: id,
@@ -52,7 +52,7 @@ export default function TestPortal() {
   useEffect(() => {
     async function getQuestions() {
       console.log("inside getQuestions");
-      const url = "http://localhost:4000/getquestionsfortest";
+      const url = "getquestionsfortest";
       const { data } = await axios.post(url, {
         assessmentid: id,
         email: email,

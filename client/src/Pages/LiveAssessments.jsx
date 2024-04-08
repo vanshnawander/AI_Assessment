@@ -16,7 +16,7 @@ export default function LiveAssessments() {
     const navigate = useNavigate();
 
     async function getAssessments() {
-         const url = 'http://localhost:4000/getassessmentsdata';
+         const url = 'getassessmentsdata';
          const {data} = await axios.post(url, {assessmentStatus: "live"});
          //console.log(data);
          setAssessments(data);
@@ -27,7 +27,7 @@ export default function LiveAssessments() {
      }
      async function activateAssessment(id){
         console.log(id);
-        const url = "http://localhost:4000/draftassessment";
+        const url = "draftassessment";
         const { data } = await axios.post(url, { assessmentId: id },{});
         if(data){
           alert("Assessment made draft successfully");

@@ -15,7 +15,7 @@ export default function Register() {
 
     async function handleSubmit(ev){
         ev.preventDefault();
-        const url = 'http://localhost:4000/register';
+        const url = 'register';
         console.log(email);
         const {data} = await axios.post(url,{email,password,firstname,lastname,Organization});
         alert("User Created Successfully! Please Login to continue.");

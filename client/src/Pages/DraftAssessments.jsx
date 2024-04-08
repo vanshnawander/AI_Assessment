@@ -27,7 +27,7 @@ export default function DraftAssessments() {
   }
   async function activateAssessment(id){
     console.log(id);
-    const url = "http://localhost:4000/liveassessment";
+    const url = "liveassessment";
     const { data } = await axios.post(url, { assessmentId: id },{});
     if(data){
       alert("Assessment is live");
@@ -37,7 +37,7 @@ export default function DraftAssessments() {
 
 
   async function getAssessments() {
-    const url = "http://localhost:4000/getassessmentsdata";
+    const url = "getassessmentsdata";
     const { data } = await axios.post(url, { assessmentStatus: "draft" },{});
     //console.log(data);
     setAssessments(data);

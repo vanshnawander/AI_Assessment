@@ -22,7 +22,7 @@ export default function Navbar() {
 
 
   function handlelogout(){
-     axios.get('http://localhost:4000/logout', { withCredentials: true });
+     axios.get('""logout', { withCredentials: true });
 
   }
 

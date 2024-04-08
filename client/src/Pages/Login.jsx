@@ -12,7 +12,7 @@ export default function Login() {
   async function handleSubmit(ev) {
     ev.preventDefault()
     console.log("hello")
-    const url = 'http://localhost:4000/login'
+    const url = '""login'
     const { data } = await axios.post(url, { email, password }, { withCredentials: true });
     //Cookies.set('token', data.token);
     console.log(data);

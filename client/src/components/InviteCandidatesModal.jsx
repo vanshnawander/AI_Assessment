@@ -16,7 +16,7 @@ export default function DialogDefault({id}) {
 async function handleClick(e) {
     e.preventDefault();
     try{
-    const data =await axios.post("http://localhost:4000/invitecandidates", {email: email, assessmentId: id});
+    const data =await axios.post("invitecandidates", {email: email, assessmentId: id});
         handleOpen();
 }
 catch(err){
