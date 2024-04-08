@@ -27,12 +27,14 @@ async function sendMail(name, to, subject, text, html) {
 
 const sendInviteMail = async (req, res) => {
   const { email, assessmentId } = req.body;
+
+  console.log("email, assessmentId", email, assessmentId);
   const chechIfAlreadyInvited = await CandidateResponse.findOne({
     email,
     assessmentId:assessmentId,
   });
   if (chechIfAlreadyInvited) {
-    return res.status(400).json({ error: "User already invited" });
+    return res.status(403).json({ error: "User already invited" });
   }
   const html = `
   <h1>Invitation to take assessment</h1>
@@ -55,7 +57,7 @@ const sendInviteMail = async (req, res) => {
     assessmentId: assessmentId,
     isAttempted: false,
   });
-  res.status(200).json(invite);
+  return res.status(200).json(invite);
 };
 
 module.exports = { sendInviteMail };

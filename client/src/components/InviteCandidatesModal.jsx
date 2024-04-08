@@ -13,15 +13,21 @@ export default function DialogDefault({id}) {
   const [email, setEmail] = useState("");
  
   const handleOpen = () => setOpen(!open);
-function handleClick(e) {
+async function handleClick(e) {
     e.preventDefault();
-    const data =axios.post("http://localhost:4000/invitecandidates", {email: email, assessmentId: id});
-    console.log(data);
-    if(data.status === 400){
-        alert("Email already invited");
-    }
-        console.log(email);
+    try{
+    const data =await axios.post("http://localhost:4000/invitecandidates", {email: email, assessmentId: id});
         handleOpen();
+}
+catch(err){
+    if(err.response.status===403){
+        alert("Candidate already invited");
+    }
+    else{
+        alert("Something went wrong");
+    }
+    handleOpen();
+}
     };
  
   return (

@@ -13,6 +13,7 @@ import JobDescAIGenerator from "./Pages/JobDescriptionGenerator";
 import EditAssessment from "./Pages/EditAssessment";
 import AIGenerator from "./Pages/AIgenerate";
 import LiveAssessmentAnalytics from "./Pages/LiveAssessmentAnalytics";
+import CandidateReport from "./Pages/CandidateReport";
 
 export default function PageRoutes() {
   return (
@@ -32,6 +33,7 @@ export default function PageRoutes() {
         <Route path="/editassessment/:id" element={<EditAssessment />}  /> 
         <Route path='/AIgenerator' element={<AIGenerator />} />
         <Route path='/liveAssessmentAnalytics/:id' element={<LiveAssessmentAnalytics />} />
+        <Route path="/viewreport/candidate/:id" element={<CandidateReport />} />
       </Routes>
     </div>
   );

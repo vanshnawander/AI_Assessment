@@ -6,12 +6,14 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import DialogDefault from "../components/InviteCandidatesModal";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
  
 export default function LiveAssessmentAnalytics() {
   const { id } = useParams();
   const [assessment, setAssessment] = useState({});
   const [candidatesInvited, setCandidatesInvited] = useState([]);
+  const navigate = useNavigate();
 
     async function getAssessment() {
     const url = "http://localhost:4000/getassessment/"+id;
@@ -96,9 +98,14 @@ async function getCandidatesInvited() {
             console.log(candidatesAttempted[candidate]);
             return (
                 <div>
-                <Typography variant="h6" color="blue-gray" className="mb-1">
+                <Card className=" bg-gray-100 m-2">
+                <Typography color="blue-gray" className="float-left">
                     {candidatesAttempted[candidate].email}
+                    <Button className="float-right" onClick={()=>{navigate(`/viewreport/candidate/${candidatesAttempted[candidate]._id}`)}}>
+                    view report
+                </Button>
                 </Typography>
+                </Card>
                 </div>
             );
 

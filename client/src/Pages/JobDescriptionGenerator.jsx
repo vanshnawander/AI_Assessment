@@ -121,7 +121,7 @@ function SimpleCard({ Question, tag, id,  }) {
         <div className=" w-3/4 p-2 " id="section">
           <div className="flex flex-grow w-full">
           <div>
-            <h1 className="text-2xl font-bold">AI Question search</h1>
+            <h1 className="text-2xl font-bold">Job Description based search</h1>
             <br />
             <form  onSubmit={handleSubmit}>
                 <label className='mb-[4px] block text-base font-medium text-dark dark:text-white'>

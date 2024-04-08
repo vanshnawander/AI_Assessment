@@ -5,12 +5,22 @@ const Question = require('../models/Question');
 const submitTest = async (req, res) => {
     try {
         const { assessmentId, email, selectedOptions } = req.body;
-        const createdResponse = await CandidateResponse.create({
-            email,
-            isAttempted: true,
-            assessmentId: assessmentId,
-            responses: selectedOptions,
-        });
+        // const createdResponse = await CandidateResponse.create({
+        //     email,
+        //     isAttempted: true,
+        //     assessmentId: assessmentId,
+        //     responses: selectedOptions,
+        // });
+        const createdResponse = await CandidateResponse.findOneAndUpdate(
+            { email: email, assessmentId: assessmentId },
+            {
+                email,
+                isAttempted: true,
+                assessmentId: assessmentId,
+                responses: selectedOptions,
+            },
+            { upsert: true, new: true }
+        );
         res.status(201).json(createdResponse);
     } catch (error) {
         res.status(500).json({ error: 'Test didnot submit successfully' });

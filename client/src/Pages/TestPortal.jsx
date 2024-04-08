@@ -60,6 +60,7 @@ export default function TestPortal() {
       console.log(data);
       if (data === "already attempted") {
         alert("You have already attempted this test");
+        
       } else {
         setQuestions(data);
       }

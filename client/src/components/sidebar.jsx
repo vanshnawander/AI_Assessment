@@ -105,7 +105,7 @@ export default function Sidebar() {
           <ListItemPrefix>
             <InboxIcon className="h-5 w-5" />
           </ListItemPrefix>
-          Advanced AI Search
+          prompt based Search
         </ListItem>
         <ListItem  onClick={()=>{navigate('/jobdescAi')}}>
           <ListItemPrefix>
