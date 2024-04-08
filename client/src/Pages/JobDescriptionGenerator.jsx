@@ -13,7 +13,7 @@ export default function JobDescAIGenerator() {
     const [assessments, setAssessments] = useState([]);
     const [assessmentid, setAssessmentid] = useState(null);
     async function getAssessments() {
-      const url = "http://localhost:4000/getassessmentsdata";
+      const url = "getassessmentsdata";
       const { data } = await axios.post(url, { assessmentStatus: "draft" },{});
       //console.log(data);
       setAssessments(data);
@@ -64,7 +64,7 @@ function SimpleCard({ Question, tag, id,  }) {
 
   async function AddquestionToAssessment() {
     
-    const url = "http://localhost:4000/addquestiontoassessment";
+    const url = "addquestiontoassessment";
      const { data } = await axios.post(url, {
        questionid:selectedQuestions,assessmentid});
       //   console.log(data);
@@ -85,7 +85,7 @@ function SimpleCard({ Question, tag, id,  }) {
         formData.append('numques', numques);
         
 
-        const url = "http://localhost:4000/JobDescriptiongenerate";
+        const url = "JobDescriptiongenerate";
         const { data } = await axios.post(url,
             formData,
             {

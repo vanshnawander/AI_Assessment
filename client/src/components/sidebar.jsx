@@ -38,7 +38,7 @@ export default function Sidebar() {
     setOpen(open === value ? 0 : value);
   };
   function handlelogout(){
-    axios.get('http://localhost:4000/logout', { withCredentials: true });
+    axios.get('""logout', { withCredentials: true });
     console.log('logged out');
     window.location.href = '/';
 

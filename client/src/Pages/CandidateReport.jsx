@@ -14,7 +14,7 @@ export default function CandidateReport() {
 
     useEffect(() => {
         async function getReport() {
-            const url = "http://localhost:4000/getcandidatereport";
+            const url = "getcandidatereport";
             const { data } = await axios.post(url, { candidateId: id });
             //console.log(data);
             setData(data);

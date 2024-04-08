@@ -22,7 +22,7 @@ export default function EditAssessment() {
     async function RemoveQuestion(questionId) {
         const resp = alert("Are you sure you want to remove this question?");
         console.log(resp);
-        const url = "http://localhost:4000/removequestion";
+        const url ="removequestion";
         await axios.post(url, { assessmentid:id, questionId });
         setChange(!change);
     }
@@ -56,7 +56,7 @@ export default function EditAssessment() {
    // console.log(id);
    useEffect(() => {  
     async function getQuestions() {
-      const url = "http://localhost:4000/getquestions";
+      const url = "getquestions";
       const { data } = await axios.post(url, { assessmentid: id });
       console.log(data);
       setQuestions(data);

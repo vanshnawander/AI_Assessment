@@ -16,14 +16,14 @@ export default function LiveAssessmentAnalytics() {
   const navigate = useNavigate();
 
     async function getAssessment() {
-    const url = "http://localhost:4000/getassessment/"+id;
+    const url = "getassessment/"+id;
     const { data } = await axios.get(url);
     setAssessment(data);
     }
 
 
 async function getCandidatesInvited() {
-    const url = "http://localhost:4000/getcandidatesinvited";
+    const url = "getcandidatesinvited";
     const { data } = await axios.post(url, { assessmentId: id });
     console.log(data);
     setCandidatesInvited(data);
