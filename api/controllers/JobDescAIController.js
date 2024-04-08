@@ -1,6 +1,6 @@
 const fs = require("fs");
 const pdfParser = require("pdf-parse");
-const { Question } = require("../models/Question");
+const  Question  = require("../models/Question");
 const OpenAI = require("openai");
 const { generateEmbedding } = require("./EmbeddingGeneratorController");
 
@@ -37,6 +37,7 @@ const JobDescriptionGenerator = async (req, res) => {
     const numquesInt = parseInt(numques);
     const fileContent = fs.readFileSync(filePath);
     const pdfData = await pdfParser(fileContent);
+    console.log(filePath);
     // Process the PDF file content (example: using pdf-parse library)
     const response = await AIresponseGPT(pdfData.text);
     //console.log(response.message.content);

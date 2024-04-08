@@ -23,6 +23,7 @@ app.use("",require('./Routes/QuestionRoute'));
 app.use("",require('./Routes/AssessmentRoutes'));
 app.use("",require('./Routes/candidateRoutes'));
 app.use("",require('./Routes/TestRoutes'));
+app.use('',require('./Routes/AIgeneration'));
 
 
 const server = app.listen(4000);

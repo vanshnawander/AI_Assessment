@@ -27,7 +27,7 @@ export default function CreateQuestionForm() {
             isCorrect: option.isCorrect,
         }));
 
-        const url = """createquestion";
+        const url = "createquestion";
         const { data } = await axios.post(url, {
             question:questionText,
             difficulty,

@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const multer  = require('multer')
 const {JobDescriptionGenerator} = require('../controllers/JobDescAIController');
+const {PromptGenerate} = require('../controllers/PromptGenerate')
 
 
 const storage = multer.diskStorage({
@@ -16,3 +17,8 @@ const upload = multer({ storage });
 
 
 router.post("/JobDescriptiongenerate",upload.single('pdfFile') ,JobDescriptionGenerator);
+router.post("/AIgenerate",PromptGenerate);
+
+
+
+module.exports = router;
