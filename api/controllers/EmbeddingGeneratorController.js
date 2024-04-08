@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const generateEmbedding = async (text) => {
-  hf_token = "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";
   embedding_url =
     "https://api-inference.huggingface.co/pipeline/feature-extraction/sentence-transformers/all-MiniLM-L6-v2";
   try {
